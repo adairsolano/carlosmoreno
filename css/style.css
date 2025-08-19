@@ -415,18 +415,6 @@
     color: var(--bs-primary) !important;
 }
 
-@media (max-width: 576px) {
-    .header-carousel .owl-nav .owl-prev,
-    .header-carousel .owl-nav .owl-next {
-        top: 630px;
-        transition: 0.5s;
-    }
-
-    .header-carousel .header-carousel-item .carousel-caption .carousel-caption-content {
-        width: 95% !important;
-    }
- 
-}
 
 .header-carousel .header-carousel-item,
 .header-carousel .header-carousel-item img {
@@ -437,23 +425,6 @@
     display: block;
     object-fit: cover;
     transition: 0.5s;
-
-}
-
-@media (max-width: 992px) {
-    .header-carousel .header-carousel-item,
-    .header-carousel .header-carousel-item img {
-        margin-top: 0;
-        transition: 0.5s;
-    }
-
-}
-
-@media (min-width: 992px) {
-    .header-carousel .owl-nav .owl-prev,
-    .header-carousel .owl-nav .owl-next {
-        margin-top: 50px;
-    }
 }
 
 .header-carousel .header-carousel-item .carousel-caption {
@@ -472,8 +443,73 @@
 .header-carousel .header-carousel-item .carousel-caption .carousel-caption-content {
     position: relative;
     width: 75%;
-    
+    margin: auto;
+    color: #fff;
 }
+
+/* === Ajustes responsivos === */
+@media (max-width: 992px) {
+    .header-carousel .header-carousel-item,
+    .header-carousel .header-carousel-item img {
+        height: 550px; /* más bajo en tablets */
+    }
+
+    .header-carousel .carousel-caption-content {
+        width: 85%;
+        text-align: center;
+    }
+
+    .header-carousel .carousel-caption-content h1 {
+        font-size: 2rem;
+    }
+
+    .header-carousel .carousel-caption-content h5 {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .header-carousel .header-carousel-item,
+    .header-carousel .header-carousel-item img {
+        height: auto; /* Deja que crezca según el contenido */
+        min-height: 600px; /* Para que siga viéndose alto */
+        object-fit: cover;
+    }
+
+    .header-carousel .carousel-caption {
+        position: relative; /* Evita que el texto se desborde */
+        height: auto;
+        padding: 2rem 1rem;
+        display: block; /* Ya no forzamos flex en móvil */
+    }
+
+    .header-carousel .carousel-caption-content {
+        width: 95% !important;
+        margin: auto;
+        text-align: center;
+    }
+
+    .header-carousel .carousel-caption-content .row {
+        flex-direction: column; /* apila las listas */
+    }
+
+    .header-carousel .carousel-caption-content h1 {
+        font-size: 1.6rem;
+    }
+
+    .header-carousel .carousel-caption-content h5 {
+        font-size: 1rem;
+    }
+
+    .header-carousel .carousel-caption-content ul li {
+        font-size: 0.9rem;
+    }
+
+    .header-carousel .carousel-caption-content .btn {
+        width: 100%;
+    }
+}
+
 /*** Carousel Hero Header End ***/
 
 
